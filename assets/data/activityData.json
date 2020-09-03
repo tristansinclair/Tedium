@@ -1,0 +1,26 @@
+{
+    "activityData": [
+        {
+            "id": 1,
+            "name": "Hiking the Dish",
+            "description": "this activity is just a test!",
+            "images": [
+                "stanforddish.jpg"
+            ],
+            "cost": 0,
+            "rating": 3.5
+        },
+        {
+            "id": 2,
+            "name": "Point Bonita Lighthouse",
+            "description": "this activity is just a test!",
+            "images": [
+                "pointbonitalighthouse.jpg",
+                "pointbonitalighthouse2.jpg",
+                "pointbonitalighthouse3.jpg"
+            ],
+            "cost": 0,
+            "rating": 4.9
+        }
+    ]
+}
