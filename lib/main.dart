@@ -13,21 +13,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User user = User(ActivityDataKai());
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      color: primaryTheme,
-      home: DefaultTabController(
-        initialIndex: 1,
-        length: 3,
-        child: Scaffold(
-          body: TabBarView(
-            children: [
-              QuestionPage(user.data),
-              HomePage(),
-              SocialPage(),
-            ],
-          ),
+    var tabBarView = TabBarView(
+                children: [
+                  QuestionPage(user.data),
+                  HomePage(),
+                  SocialPage(),
+                ],
+              );
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          color: primaryTheme,
+          home: DefaultTabController(
+            initialIndex: 1,
+            length: 3,
+            child: Scaffold(
+              body: tabBarView,
           bottomNavigationBar: TabBar(
+            isScrollable: false,
             tabs: [
               Tab(
                 icon: Icon(Icons.rss_feed),

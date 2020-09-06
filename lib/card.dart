@@ -1,20 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/card_2.dart';
+import 'package:flutterapp/cardExpanded.dart';
 import 'data.dart';
 import 'theme.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/animation.dart';
-
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 /**
  * * card.dart
  * Used to create "Cards" to display an activity
  * Takes in the ActivityData class and creates a card
- * based off the data stored
  */
+
 
 /**
  * * ActivityCard Widget
@@ -25,7 +21,9 @@ class ActivityCard extends StatelessWidget {
   final ActivityData activityData;
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child:Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
@@ -55,7 +53,7 @@ class ActivityCard extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ActivityCardExpansion(activityData: activityData),
+                      ActivityScreen(activityData: activityData),
                   fullscreenDialog: true,
                 ),
               );
@@ -85,7 +83,7 @@ class ActivityCard extends StatelessWidget {
               ),
             ])),
       ]),
-    );
+    ),);
   }
 }
 
@@ -131,97 +129,6 @@ class ActivityCardText extends StatelessWidget {
             ),
           ])),
     );
-  }
-}
-
-class ActivityCardExpansion extends StatefulWidget {
-  final ActivityData activityData;
-
-  const ActivityCardExpansion({Key key, this.activityData}) : super(key: key);
-
-  _ActivityCardExpansionState createState() =>
-      _ActivityCardExpansionState(activityData);
-}
-
-class _ActivityCardExpansionState extends State<ActivityCardExpansion> {
-  ActivityData activityData;
-  _ActivityCardExpansionState(this.activityData);
-
-  @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    print(width);
-
-    return Stack(children: <Widget>[
-      Material(
-        child: Stack(children: [
-          Column(children: <Widget>[
-            Hero(
-              tag: activityData.images[0],
-              child: ImageSlider(
-                images: activityData.images,
-                height: 350,
-              ),
-            ),
-
-            //ImageSlider(activityData.images, 400),
-            Hero(
-              tag: activityData.name,
-              child: ActivityCardText(activityData),
-            ),
-            Expanded(
-              child: Center(child: Text("Some more content goes here!")),
-            ),
-          ]),
-          Positioned(
-              right: 15,
-              top: 30,
-              child: Stack(children: <Widget>[
-                Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(32.0),
-                    ),
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.favorite_border,
-                        size: 30,
-                        color: white,
-                      ),
-                    ),
-                  ),
-                ),
-              ])),
-        ]),
-      ),
-      Positioned(
-          left: 15,
-          top: 30,
-          child: Stack(children: <Widget>[
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(32.0),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.cancel,
-                    size: 30,
-                    color: white,
-                  ),
-                ),
-              ),
-            ),
-          ])),
-    ]);
   }
 }
 
@@ -272,22 +179,25 @@ class _ImageSliderState extends State<ImageSlider> {
             .toList(),
       ),
       if (images.length > 1)
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: images.map((url) {
-            int index = images.indexOf(url);
-            return Container(
-              width: 6.0,
-              height: 6.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? primaryTextColor.withOpacity(.5)
-                    : secondaryTextColor,
-              ),
-            );
-          }).toList(),
+        SafeArea(
+          top: true,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: images.map((url) {
+              int index = images.indexOf(url);
+              return Container(
+                width: 6.0,
+                height: 6.0,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _current == index
+                      ? primaryTextColor.withOpacity(.5)
+                      : secondaryTextColor,
+                ),
+              );
+            }).toList(),
+          ),
         )
     ]);
   }

@@ -1,17 +1,20 @@
-import 'package:flappy_search_bar/scaled_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'card.dart';
 import 'data.dart';
 import 'theme.dart';
 
-import 'dart:math';
-import 'package:flappy_search_bar/flappy_search_bar.dart';
+LocationData locationData = LocationData(0, 0);
 
-ActivityData testActivity = createActivity("Hiking the Dish",
-    "this activity is just a test!", ["stanforddish.jpg"], 0, 3.5);
+ActivityData testActivity = ActivityData(
+    "Hiking the Dish",
+    "this activity is just a test!",
+    ["stanforddish.jpg"],
+    0,
+    3.5,
+    locationData);
 
-ActivityData testActivity2 = createActivity(
+ActivityData testActivity2 = ActivityData(
     "Point Bonita Lighthouse",
     "this activity is just a test!",
     [
@@ -20,7 +23,8 @@ ActivityData testActivity2 = createActivity(
       "pointbonitalighthouse3.jpg"
     ],
     0,
-    4.9);
+    4.9,
+    locationData);
 
 List<ActivityData> activityDataSet = [testActivity, testActivity2];
 
@@ -38,69 +42,58 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
         backgroundColor: Colors.transparent,
         body: SafeArea(
-            child: Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: Column(children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search),
-                      border: InputBorder.none,
-                      filled: true,
-                      hintStyle: new TextStyle(
-                        color: Colors.grey[800],
-                        fontFamily: primaryFont,
-                      ),
-                      hintText: "Search",
-                      fillColor: CupertinoColors.systemGrey5,
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        borderSide:
-                            BorderSide(color: CupertinoColors.systemGrey5),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        borderSide: BorderSide(color: CupertinoColors.systemGrey5),
-                      ),
-                    ),
+            child: Column(children: <Widget>[
+          Padding(
+            padding: EdgeInsets.fromLTRB(25, 5, 25, 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  "Explore",
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontFamily: primaryFont,
+                    color: const Color(0xff47455f),
+                    fontWeight: FontWeight.w900,
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Explore",
-                          style: TextStyle(
-                            fontSize: 30.0,
-                            fontFamily: primaryFont,
-                            color: const Color(0xff47455f),
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => print('See All'),
-                          child: Text(
-                            'See All',
-                            style: TextStyle(
-                              color: primaryTextColor,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.0,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                      height: 330,
-                      child: PageView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            ActivityCard(testActivity),
-                            ActivityCard(testActivity2),
-                          ]))
-                ]))));
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                border: InputBorder.none,
+                filled: true,
+                hintStyle: TextStyle(
+                  color: Colors.grey[800],
+                  fontFamily: primaryFont,
+                ),
+                hintText: "Search",
+                fillColor: CupertinoColors.systemGrey5,
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                  borderSide: BorderSide(color: CupertinoColors.systemGrey5),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                  borderSide: BorderSide(color: CupertinoColors.systemGrey5),
+                ),
+              ),
+            ),
+          ),
+          Container(
+              height: 330,
+              child:
+                  PageView(
+                    scrollDirection: Axis.horizontal, 
+                    children: <Widget>[
+                ActivityCard(testActivity),
+                ActivityCard(testActivity2),
+              ]))
+        ])));
   }
 }
 
