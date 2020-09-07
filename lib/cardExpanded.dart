@@ -53,276 +53,220 @@ class _ActivityScreenState extends State<ActivityScreen>
 
   @override
   Widget build(BuildContext context) {
-    final double tempHeight = MediaQuery.of(context).size.height -
-        (MediaQuery.of(context).size.width / 1.2) +
-        24.0;
     return Container(
-      color: TediumTheme.nearlyWhite,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(
-          children: <Widget>[
-            Column(
-              children: [
-                Hero(
-                  tag: activityData.images[0],
-                  child: ImageSlider(
-                    images: activityData.images,
-                    height: 350,
+        color: TediumTheme.nearlyWhite,
+        child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: Stack(children: <Widget>[
+              Column(
+                children: [
+                  Hero(
+                    tag: activityData.images[0],
+                    child: ImageSlider(
+                      images: activityData.images,
+                      height: MediaQuery.of(context).size.height / 2.5,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Positioned(
-              top: (MediaQuery.of(context).size.width / 1.2) - 24.0,
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: TediumTheme.nearlyWhite,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(32.0),
-                      topRight: Radius.circular(32.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: TediumTheme.grey.withOpacity(0.2),
-                        offset: const Offset(1.1, 1.1),
-                        blurRadius: 10.0),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: SingleChildScrollView(
-                    child: Container(
-                      constraints: BoxConstraints(
-                          minHeight: infoHeight,
-                          maxHeight: tempHeight > infoHeight
-                              ? tempHeight
-                              : infoHeight),
-                      child: Column(
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                    child: Hero(
+                    tag: activityData.name,
+                    child: Text(
+                      activityData.name,
+                      style: TextStyle(
+                        fontFamily: primaryFont,
+                        fontSize: 28,
+                        color: const Color(0xff47455f),
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),),
+                  Hero(
+                    tag: activityData.rating,
+                    child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          RatingBarIndicator(
+                            rating: activityData.rating,
+                            itemBuilder: (context, index) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            itemCount: 5,
+                            itemSize: 20.0,
+                            direction: Axis.horizontal,
+                          ),
+                          Container(width: 10),
+                          Text(
+                            // Secondary text (Distance maybe?)
+                            'distance',
+                            style: TextStyle(
+                              fontFamily: primaryFont,
+                              fontSize: 16,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ]),
+                  ),
+                  AnimatedOpacity(
+                    duration: const Duration(milliseconds: 500),
+                    opacity: opacity1,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
                         children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 16.0, left: 20, right: 16),
-                            child: Text(
-                              activityData.name,
-                              style: TextStyle(
-                                fontFamily: primaryFont,
-                                fontSize: 28,
-                                color: const Color(0xff47455f),
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 16, right: 16),
-                            child: Row(
-                              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      RatingBarIndicator(
-                                        rating: activityData.rating,
-                                        itemBuilder: (context, index) => Icon(
-                                          Icons.star,
-                                          color: Colors.amber,
-                                        ),
-                                        itemCount: 5,
-                                        itemSize: 20.0,
-                                        direction: Axis.horizontal,
-                                      ),
-                                      Container(width: 10),
-                                      Text(
-                                        // Secondary text (Distance maybe?)
-                                        'distance',
-                                        style: TextStyle(
-                                          fontFamily: primaryFont,
-                                          fontSize: 16,
-                                          color: primaryTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ])
-                              ],
-                            ),
-                          ),
-                          AnimatedOpacity(
-                            duration: const Duration(milliseconds: 500),
-                            opacity: opacity1,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                children: <Widget>[
-                                  getTimeBoxUI('24', 'Classe'),
-                                  getTimeBoxUI('2hours', 'Time'),
-                                  getTimeBoxUI('24', 'Seat'),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: AnimatedOpacity(
-                              duration: const Duration(milliseconds: 500),
-                              opacity: opacity2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 8, bottom: 8),
-                                child: Text(
-                                  'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 14,
-                                    letterSpacing: 0.27,
-                                    color: TediumTheme.grey,
-                                  ),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ),
-                          ),
-                          AnimatedOpacity(
-                            duration: const Duration(milliseconds: 500),
-                            opacity: opacity3,
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 16, bottom: 16, right: 16),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Container(
-                                    width: 48,
-                                    height: 48,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: TediumTheme.nearlyWhite,
-                                        borderRadius: const BorderRadius.all(
-                                          Radius.circular(16.0),
-                                        ),
-                                        border: Border.all(
-                                            color: TediumTheme.grey
-                                                .withOpacity(0.2)),
-                                      ),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: TediumTheme.amber,
-                                        size: 28,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 16,
-                                  ),
-                                  Expanded(
-                                    child: InkWell(
-                                      onTap: () =>
-                                          {print("Join Courser pressed")},
-                                      child: Container(
-                                        height: 48,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              TediumTheme.amber,
-                                          borderRadius: const BorderRadius.all(
-                                            Radius.circular(16.0),
-                                          ),
-                                          boxShadow: <BoxShadow>[
-                                            BoxShadow(
-                                                color: TediumTheme
-                                                    .amber
-                                                    .withOpacity(0.5),
-                                                offset: const Offset(1.1, 1.1),
-                                                blurRadius: 10.0),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Join Course',
-                                            textAlign: TextAlign.left,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 18,
-                                              letterSpacing: 0.0,
-                                              color: TediumTheme
-                                                  .nearlyWhite,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: MediaQuery.of(context).padding.bottom,
-                          )
+                          getTimeBoxUI(
+                              activityData.rating.toString(), 'Rating'),
+                          getTimeBoxUI("1 Mile", 'Distance'),
+                          getTimeBoxUI('24', 'Seat'),
                         ],
                       ),
                     ),
                   ),
-                ),
+                  Expanded(
+                    child: AnimatedOpacity(
+                      duration: const Duration(milliseconds: 500),
+                      opacity: opacity2,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 16, right: 16, top: 8, bottom: 8),
+                        child: Text(
+                          'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w200,
+                            fontSize: 14,
+                            letterSpacing: 0.27,
+                            color: TediumTheme.grey,
+                          ),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  ),
+                  AnimatedOpacity(
+                    duration: const Duration(milliseconds: 500),
+                    opacity: opacity3,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, bottom: 16, right: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 48,
+                            height: 48,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: TediumTheme.nearlyWhite,
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(16.0),
+                                ),
+                                border: Border.all(
+                                    color: TediumTheme.grey.withOpacity(0.2)),
+                              ),
+                              child: Icon(
+                                Icons.add,
+                                color: TediumTheme.amber,
+                                size: 28,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 16,
+                          ),
+                          // Expanded(
+                          //   child: InkWell(
+                          //     onTap: () => {print("Join Courser pressed")},
+                          //     child: Container(
+                          //       height: 48,
+                          //       decoration: BoxDecoration(
+                          //         color: TediumTheme.amber,
+                          //         borderRadius: const BorderRadius.all(
+                          //           Radius.circular(16.0),
+                          //         ),
+                          //         boxShadow: <BoxShadow>[
+                          //           BoxShadow(
+                          //               color:
+                          //                   TediumTheme.amber.withOpacity(0.5),
+                          //               offset: const Offset(1.1, 1.1),
+                          //               blurRadius: 10.0),
+                          //         ],
+                          //       ),
+                          //       child: Center(
+                          //         child: Text(
+                          //           'Join Course',
+                          //           textAlign: TextAlign.left,
+                          //           style: TextStyle(
+                          //             fontWeight: FontWeight.w600,
+                          //             fontSize: 18,
+                          //             letterSpacing: 0.0,
+                          //             color: TediumTheme.nearlyWhite,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Positioned(
-              top: (MediaQuery.of(context).size.width / 1.2) - 24.0 - 35 + 20,
-              right: 20,
-              child: ScaleTransition(
-                alignment: Alignment.center,
-                scale: CurvedAnimation(
-                    parent: animationController, curve: Curves.fastOutSlowIn),
-                child: Card(
-                  color: TediumTheme.amber,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0)),
-                  elevation: 10.0,
-                  child: Container(
-                    width: 60,
-                    height: 60,
-                    child: Center(
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: TediumTheme.nearlyWhite,
-                        size: 30,
+              Positioned(
+                top: (MediaQuery.of(context).size.width / 1.2) - 24.0 - 35 + 20,
+                right: 20,
+                child: ScaleTransition(
+                  alignment: Alignment.center,
+                  scale: CurvedAnimation(
+                      parent: animationController, curve: Curves.fastOutSlowIn),
+                  child: Card(
+                    color: TediumTheme.amber,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)),
+                    elevation: 10.0,
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      child: Center(
+                        child: Icon(
+                          Icons.favorite_border,
+                          color: TediumTheme.nearlyWhite,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-              child: SizedBox(
-                width: AppBar().preferredSize.height,
-                height: AppBar().preferredSize.height,
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius:
-                        BorderRadius.circular(AppBar().preferredSize.height),
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: TediumTheme.nearlyBlack,
+              Padding(
+                padding:
+                    EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+                child: SizedBox(
+                  width: AppBar().preferredSize.height,
+                  height: AppBar().preferredSize.height,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius:
+                          BorderRadius.circular(AppBar().preferredSize.height),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: TediumTheme.nearlyBlack,
+                      ),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
                   ),
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+              )
+            ])));
   }
 
   Widget getTimeBoxUI(String text1, String txt2) {
@@ -336,7 +280,7 @@ class _ActivityScreenState extends State<ActivityScreen>
             BoxShadow(
                 color: TediumTheme.grey.withOpacity(0.2),
                 offset: const Offset(1.1, 1.1),
-                blurRadius: 8.0),
+                blurRadius: 4.0),
           ],
         ),
         child: Padding(

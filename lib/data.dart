@@ -31,8 +31,11 @@ class ActivityData {
   double rating;
   LocationData location;
 
+  // Hidden Data
+  int tag;
+
   ActivityData(
-      this.name, this.description, this.images, this.cost, this.rating, this.location);
+      this.tag, this.name, this.description, this.images, this.cost, this.rating, this.location);
 
 
   final String dataPath = "assets/data/activityData.json";

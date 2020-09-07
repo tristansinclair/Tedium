@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		pTNlRza4MDanZdiRsgOTmdghuoE=
+		3rg59uYc9kpGeUCNHY7SRsrwnss=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		d6p1aiyOZanznGmVuLh1c5P3Bmo=
+		xTNaPxBL4aoo2VQssYDvloYc/hc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		d/khhzCk9EuDFMhENzT7r+gj63o=
+		wHtYvg7E1YYrAomA1Th7f0VV3sI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES</key>
 		<data>
-		VKI5CnG9Ea8kCU+ZDf0V+QBA7UY=
+		hCabiOt8lxDYROyFizypVlwdDcg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/data/activityData.json</key>
 		<data>
@@ -139,6 +139,26 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/images/RedDot_Burger.jpg</key>
 		<data>
 		Txf/BXutU5rtUMtuGdOmMvhvc/k=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/halfmoonbaysunset.jpeg</key>
+		<data>
+		MxLspvJ/fhkRXImHmmegTb4xpdQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/halfmoonbaysunset2.jpeg</key>
+		<data>
+		TJoJGVhzC47Kh3vrqNK9VfXKMgU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook.jpg</key>
+		<data>
+		ebko9fyhF4xd3wT7u+o2e0WpiG8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook2.jpg</key>
+		<data>
+		zI4U9y6LWlEDRB1GG491vzClpQE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook3.jpg</key>
+		<data>
+		/JvwNaQWJtJj2kN5yFwDkTPYIW4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/pointbonitalighthouse.jpg</key>
 		<data>
@@ -166,7 +186,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		vZRwTOVrwm34Rj2zRbhFDfssBls=
+		WTHk2BRhPW+REZPaoOUQ8tyKwlg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -266,7 +286,7 @@
 		</data>
 		<key>Frameworks/shared_preferences.framework/shared_preferences</key>
 		<data>
-		yWpmHtbUSOpgRX1yN0mpa3RrWgo=
+		eV2RosbcAyM8ig5mciKBvpMOlc8=
 		</data>
 		<key>Frameworks/url_launcher.framework/Info.plist</key>
 		<data>
@@ -278,7 +298,7 @@
 		</data>
 		<key>Frameworks/url_launcher.framework/url_launcher</key>
 		<data>
-		b444d6GiBtEiIJ8iROh08IFoQtI=
+		ZrXb5ZgsfEKRczRC0CDcjm1FDJw=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -581,11 +601,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pTNlRza4MDanZdiRsgOTmdghuoE=
+			3rg59uYc9kpGeUCNHY7SRsrwnss=
 			</data>
 			<key>hash2</key>
 			<data>
-			yVt4OXMP4/pqcchU3TSqOZWlzJ3h2yci/hGMI5BozpY=
+			aVMVdFPxJ6ATCAd7GLM/z0XrlCyc3WhDKaDbeCz39ko=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -603,22 +623,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d6p1aiyOZanznGmVuLh1c5P3Bmo=
+			xTNaPxBL4aoo2VQssYDvloYc/hc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/8TcDMST1v6OSXO6gkLL9HaSvoT2i/VV3sAhEM8xxFI=
+			8NUjPkdns7tzfWh8FnN46FbSSopiJT5USfRyHNDh7yk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d/khhzCk9EuDFMhENzT7r+gj63o=
+			wHtYvg7E1YYrAomA1Th7f0VV3sI=
 			</data>
 			<key>hash2</key>
 			<data>
-			mycrXPuvOnMPh5UiMfjT7Q7TSug2anivMjT32cvhdOI=
+			8pOVqDDkn/dUVncCd35Gh/uLwPsF7Apk60y3u8gibmY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -636,11 +656,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VKI5CnG9Ea8kCU+ZDf0V+QBA7UY=
+			hCabiOt8lxDYROyFizypVlwdDcg=
 			</data>
 			<key>hash2</key>
 			<data>
-			NLBiuPCbrbJRd1ety9yXsC6zO/LcYocyvMvalwoeFx0=
+			JjQtPjk2O/Evz5NuIi19naIPgcBuXNlLxlvo3TK08h0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/data/activityData.json</key>
@@ -663,6 +683,61 @@
 			<key>hash2</key>
 			<data>
 			3/VlafejWMJXRnc740aXG4jhU6RuVlzRIwxolJ9SJzw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/halfmoonbaysunset.jpeg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MxLspvJ/fhkRXImHmmegTb4xpdQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			t7ubpOVZCV6dzYYuRyanxLnboKKLKl4LytEXxocNHEk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/halfmoonbaysunset2.jpeg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TJoJGVhzC47Kh3vrqNK9VfXKMgU=
+			</data>
+			<key>hash2</key>
+			<data>
+			CmDRGgkj7xJHr2gaJM51SB83DtNWEKdbFwv9/CUM7/w=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ebko9fyhF4xd3wT7u+o2e0WpiG8=
+			</data>
+			<key>hash2</key>
+			<data>
+			e9wgv1d24Xj/kWwlOFWKmBB/7K2xASOKyLPlFHYcXiM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook2.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zI4U9y6LWlEDRB1GG491vzClpQE=
+			</data>
+			<key>hash2</key>
+			<data>
+			DlbZAFX3CiZ5AX4fdCt5ZvMWE5X3+ucwqQE8XVSTSQg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/muirbeachoverlook3.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/JvwNaQWJtJj2kN5yFwDkTPYIW4=
+			</data>
+			<key>hash2</key>
+			<data>
+			pH6zQcw8CVMH3VjenTazj1Ui5BEzTIupmj8PeZUYZqc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/pointbonitalighthouse.jpg</key>
@@ -735,11 +810,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vZRwTOVrwm34Rj2zRbhFDfssBls=
+			WTHk2BRhPW+REZPaoOUQ8tyKwlg=
 			</data>
 			<key>hash2</key>
 			<data>
-			B/IMHeV7cXW+98IKMNpH9tYTjqlJBNjJOFLjm/oMRNo=
+			E7kr607aPPmmXJ74Ob+jLXGGh/3RY80wRPRx1aMpWI4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1010,11 +1085,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yWpmHtbUSOpgRX1yN0mpa3RrWgo=
+			eV2RosbcAyM8ig5mciKBvpMOlc8=
 			</data>
 			<key>hash2</key>
 			<data>
-			x2O0oI1FYl9l+9UPAEI1AU7voM9JpUFeAzR994kkNeg=
+			r14hnOQJwACKrlD5mUOcpg9Fgs3GwWWSscxGdbYvNyM=
 			</data>
 		</dict>
 		<key>Frameworks/url_launcher.framework/Info.plist</key>
@@ -1043,11 +1118,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			b444d6GiBtEiIJ8iROh08IFoQtI=
+			ZrXb5ZgsfEKRczRC0CDcjm1FDJw=
 			</data>
 			<key>hash2</key>
 			<data>
-			kaAX6IrCJMN/wGvtLNuMgywFazpmfFqcUROqjz+qLPc=
+			k9Zzr7aIX8HHs+bJonkgpNZqHJg1n+TS0BcXBj3Ilgw=
 			</data>
 		</dict>
 	</dict>
