@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'theme.dart';
-import 'data.dart';
+import 'data/theme.dart';
+import 'data/data.dart';
 import 'card.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -70,17 +70,18 @@ class _ActivityScreenState extends State<ActivityScreen>
                   Padding(
                     padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
                     child: Hero(
-                    tag: activityData.name,
-                    child: Text(
-                      activityData.name,
-                      style: TextStyle(
-                        fontFamily: primaryFont,
-                        fontSize: 28,
-                        color: const Color(0xff47455f),
-                        fontWeight: FontWeight.w900,
+                      tag: activityData.name,
+                      child: Text(
+                        activityData.name,
+                        style: TextStyle(
+                          fontFamily: primaryFont,
+                          fontSize: 28,
+                          color: const Color(0xff47455f),
+                          fontWeight: FontWeight.w900,
+                        ),
                       ),
                     ),
-                  ),),
+                  ),
                   Hero(
                     tag: activityData.rating,
                     child: Row(
@@ -99,7 +100,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                           Container(width: 10),
                           Text(
                             // Secondary text (Distance maybe?)
-                            'distance',
+                            activityData.distance,
                             style: TextStyle(
                               fontFamily: primaryFont,
                               fontSize: 16,
@@ -119,8 +120,8 @@ class _ActivityScreenState extends State<ActivityScreen>
                         children: <Widget>[
                           getTimeBoxUI(
                               activityData.rating.toString(), 'Rating'),
-                          getTimeBoxUI("1 Mile", 'Distance'),
-                          getTimeBoxUI('24', 'Seat'),
+                          getTimeBoxUI("50 Miles", 'Away'),
+                          getTimeBoxUI('128', 'Reviews'),
                         ],
                       ),
                     ),
@@ -132,17 +133,26 @@ class _ActivityScreenState extends State<ActivityScreen>
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 16, right: 16, top: 8, bottom: 8),
-                        child: Text(
-                          'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w200,
-                            fontSize: 14,
-                            letterSpacing: 0.27,
-                            color: TediumTheme.grey,
+                        child: Container(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: 350.0,
+                              maxWidth: 400.0,
+                              minHeight: 30.0,
+                              maxHeight: 200.0,
+                            ),
+                            child: Text(
+                              "Muir Beach Overlook is part of the Golden Gate National Recreation Area. People may visit this cliffside park when driving on State Route 1 north of San Francisco, California and south of Stinson Beach, California. It has views of Pacific oceanside cliffs and on clear days you can see San Francisco.",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                                color: TediumTheme.nearlyBlack,
+                              ),
+                              maxLines: 10,
+                              //overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
@@ -272,17 +282,13 @@ class _ActivityScreenState extends State<ActivityScreen>
   Widget getTimeBoxUI(String text1, String txt2) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: TediumTheme.nearlyWhite,
-          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: TediumTheme.grey.withOpacity(0.2),
-                offset: const Offset(1.1, 1.1),
-                blurRadius: 4.0),
-          ],
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
+        elevation: 4,
+        color: TediumTheme.nearlyWhite,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Padding(
           padding: const EdgeInsets.only(
               left: 18.0, right: 18.0, top: 12.0, bottom: 12.0),
@@ -304,10 +310,10 @@ class _ActivityScreenState extends State<ActivityScreen>
                 txt2,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontWeight: FontWeight.w200,
+                  fontWeight: FontWeight.w400,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: TediumTheme.grey,
+                  color: TediumTheme.nearlyBlack,
                 ),
               ),
             ],

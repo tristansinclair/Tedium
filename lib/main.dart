@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/user.dart';
-import 'socialPage.dart';
-import 'homePage.dart';
-import 'questionPage.dart';
-import 'theme.dart'; // Theme Colors
+import 'package:flutterapp/data/user.dart';
+import 'Pages/socialPage.dart';
+import 'Pages/homePage.dart';
+import 'Pages/questionPage.dart';
+import 'data/theme.dart'; // Theme Colors
 
 List<int> fixedLengthList = new List(5);
 

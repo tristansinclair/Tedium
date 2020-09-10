@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/cardExpanded.dart';
 import 'package:flutterapp/cardExpansionAnimation.dart';
-import 'data.dart';
-import 'theme.dart';
+import 'data/data.dart';
+import 'data/theme.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:expansion_card/expansion_card.dart';
 
 /**
  * * card.dart
@@ -22,78 +23,77 @@ class ActivityCard extends StatelessWidget {
   final ActivityData activityData;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          color: Colors.white,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Stack(children: [
-            Column(children: <Widget>[
-              Hero(
-                tag: activityData.images[0],
-                child: ImageSlider(
-                  images: activityData.images,
-                  height: 250,
-                ),
-              ),
-              Container(
-                  decoration: BoxDecoration(
-                    color: TediumTheme.nearlyWhite,
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(32.0),
-                        topRight: Radius.circular(32.0)),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: TediumTheme.grey.withOpacity(0.2),
-                          offset: const Offset(1.1, 1.1),
-                          blurRadius: 10.0),
-                    ],
-                  ),
-                  child: ActivityCardText(activityData))
-            ]),
-            Positioned(
-              left: 0.0,
-              top: 0.0,
-              bottom: 0.0,
-              right: 0.0,
-              child: GestureDetector(
-                onTap: () async {
-                  await Future.delayed(Duration(milliseconds: 200));
-                  Navigator.push(
-                      context,
-                      CardExpand(
-                        page: ActivityScreen(activityData: activityData),
-                      ));
-                },
-              ),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 1,
+      color: Colors.white,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Stack(children: [
+        Column(children: <Widget>[
+          Hero(
+            tag: activityData.images[0],
+            child: ImageSlider(
+              images: activityData.images,
+              height: 250,
             ),
-            Positioned(
-                right: 20,
-                top: 20,
-                child: Stack(children: <Widget>[
-                  Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(32.0),
-                      ),
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.favorite_border,
-                          size: 30,
-                          color: white,
-                        ),
-                      ),
+          ),
+          Container(
+              decoration: BoxDecoration(
+                color: TediumTheme.nearlyWhite,
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(32.0),
+                    topRight: Radius.circular(32.0)),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: TediumTheme.grey.withOpacity(0.2),
+                      offset: const Offset(1.1, 1.1),
+                      blurRadius: 10.0),
+                ],
+              ),
+              child: ActivityCardText(activityData))
+        ]),
+        Positioned(
+          left: 0.0,
+          top: 0.0,
+          bottom: 0.0,
+          right: 0.0,
+          child: GestureDetector(
+            onTap: () async {
+              await Future.delayed(Duration(milliseconds: 200));
+              Navigator.push(
+                  context,
+                  CardExpand(
+                    page: ActivityScreen(activityData: activityData),
+                  ));
+            },
+          ),
+        ),
+        Positioned(
+            right: 20,
+            top: 20,
+            child: Stack(children: <Widget>[
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(32.0),
+                  ),
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.favorite_border,
+                      size: 30,
+                      color: white,
                     ),
                   ),
-                ])),
-          ]),
-        ));
+                ),
+              ),
+            ])),
+      ]),
+    );
   }
 }
 
@@ -130,10 +130,10 @@ class ActivityCardText extends StatelessWidget {
                   itemSize: 20.0,
                   direction: Axis.horizontal,
                 ),
-                Container(width: 10),
+                SizedBox(width: 10),
                 Text(
                   // Secondary text (Distance maybe?)
-                  'distance',
+                  activityData.distance,
                   style: TextStyle(
                     fontFamily: primaryFont,
                     fontSize: 16,
@@ -169,6 +169,7 @@ class _ImageSliderState extends State<ImageSlider> {
     return Stack(children: [
       CarouselSlider(
         options: CarouselOptions(
+            enableInfiniteScroll: false,
             viewportFraction: 1.0,
             enlargeCenterPage: false,
             height: height,
@@ -213,5 +214,54 @@ class _ImageSliderState extends State<ImageSlider> {
           ),
         )
     ]);
+  }
+}
+
+class MiniCard extends StatelessWidget {
+  MiniCard(this.activityData);
+  final ActivityData activityData;
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionCard(
+      borderRadius: 20,
+      background: Image.asset(
+        "assets/images/${activityData.images[0]}",
+        fit: BoxFit.cover,
+      ),
+      title: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              activityData.name,
+              style: TextStyle(
+                fontFamily: primaryFont,
+                fontSize: 22,
+                color: TediumTheme.nearlyWhite,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            Text(
+              activityData.rating.toString(),
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
+          ],
+        ),
+      ),
+      children: <Widget>[
+        Container(
+            margin: EdgeInsets.symmetric(horizontal: 7),
+            child: Text(
+              "Content goes over here !",
+              style: TextStyle(
+                fontFamily: primaryFont,
+                fontSize: 16,
+                color: TediumTheme.nearlyWhite,
+                fontWeight: FontWeight.w500,
+              ),
+            ))
+      ],
+    );
   }
 }

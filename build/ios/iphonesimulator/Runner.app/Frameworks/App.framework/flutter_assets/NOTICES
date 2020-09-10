@@ -5065,6 +5065,13 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
+expansion_card
+flutter_page_indicator
+transformer_page_view
+
+TODO: Add your license here.
+
+--------------------------------------------------------------------------------
 file
 
 Copyright 2017, the Dart project authors. All rights reserved.
@@ -5263,12 +5270,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
---------------------------------------------------------------------------------
-flutter_page_indicator
-transformer_page_view
-
-TODO: Add your license here.
 
 --------------------------------------------------------------------------------
 flutter_rating_bar

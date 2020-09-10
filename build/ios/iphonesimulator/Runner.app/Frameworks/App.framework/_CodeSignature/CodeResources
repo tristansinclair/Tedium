@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		wHtYvg7E1YYrAomA1Th7f0VV3sI=
+		o7VKSOXJSyy80Z4GfBsfbRY7CeU=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES</key>
 		<data>
-		hCabiOt8lxDYROyFizypVlwdDcg=
+		nyfCg1ZC8H6z05QXkp+WmKLOL0E=
 		</data>
 		<key>flutter_assets/assets/data/activityData.json</key>
 		<data>
@@ -27,6 +27,14 @@
 		<key>flutter_assets/assets/images/RedDot_Burger.jpg</key>
 		<data>
 		Txf/BXutU5rtUMtuGdOmMvhvc/k=
+		</data>
+		<key>flutter_assets/assets/images/ferry.jpg</key>
+		<data>
+		nXIJafg0OFHowev+8z2/1RNPQjM=
+		</data>
+		<key>flutter_assets/assets/images/ferry2.jpg</key>
+		<data>
+		CNV1jL/bT53zL/i5GZFfuYFwhU0=
 		</data>
 		<key>flutter_assets/assets/images/halfmoonbaysunset.jpeg</key>
 		<data>
@@ -74,7 +82,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		WTHk2BRhPW+REZPaoOUQ8tyKwlg=
+		0HzZhcAQeuyOVsHRWQ3dntWp7NQ=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -91,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wHtYvg7E1YYrAomA1Th7f0VV3sI=
+			o7VKSOXJSyy80Z4GfBsfbRY7CeU=
 			</data>
 			<key>hash2</key>
 			<data>
-			8pOVqDDkn/dUVncCd35Gh/uLwPsF7Apk60y3u8gibmY=
+			gvY19EK26Iq5fg3eOIivPrVOntPFeM9lMP9zr3rUAag=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -113,11 +121,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hCabiOt8lxDYROyFizypVlwdDcg=
+			nyfCg1ZC8H6z05QXkp+WmKLOL0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			JjQtPjk2O/Evz5NuIi19naIPgcBuXNlLxlvo3TK08h0=
+			az81za8A+k2v+REbTVm7RK2iF7QtRYVNoPy8fMr1Y0g=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/data/activityData.json</key>
@@ -140,6 +148,28 @@
 			<key>hash2</key>
 			<data>
 			3/VlafejWMJXRnc740aXG4jhU6RuVlzRIwxolJ9SJzw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/ferry.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nXIJafg0OFHowev+8z2/1RNPQjM=
+			</data>
+			<key>hash2</key>
+			<data>
+			LqH4SIMnpJ6mshc90EEQyFt7SfXmb8lvkQ4ydGbSxSk=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/ferry2.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CNV1jL/bT53zL/i5GZFfuYFwhU0=
+			</data>
+			<key>hash2</key>
+			<data>
+			bS0sJS8aYhFW8KEOtWf79J+17gmuFesXR0Ws/PQ9JZ8=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/halfmoonbaysunset.jpeg</key>
@@ -267,11 +297,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WTHk2BRhPW+REZPaoOUQ8tyKwlg=
+			0HzZhcAQeuyOVsHRWQ3dntWp7NQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			E7kr607aPPmmXJ74Ob+jLXGGh/3RY80wRPRx1aMpWI4=
+			LEKkLLIYhngevN13+pLF55WZmzCiV4gV4zHeM1v/ThA=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
